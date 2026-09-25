@@ -8,25 +8,10 @@ var cartoAttribution = '© <a href="https://carto.com/" target="_blank">CARTO</a
 
 var basemapStyles = {
     "OpenStreetMap": {
-    version: 8,
-    sources: {
-        osm: {
-            type: "raster",
-            tiles: [
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-            ],
-            tileSize: 256,
-            attribution: osmAttribution
-        }
+        version: 8,
+        sources: { osm: { type: "raster", tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize: 256, attribution: osmAttribution } },
+        layers: [{ id: "osm", type: "raster", source: "osm" }]
     },
-    layers: [
-        {
-            id: "osm",
-            type: "raster",
-            source: "osm"
-        }
-    ]
-},
     "Voyager": {
         version: 8,
         sources: { carto: { type: "raster", tiles: ["https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png", "https://b.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"], tileSize: 256, attribution: cartoAttribution } },
